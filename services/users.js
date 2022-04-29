@@ -50,6 +50,15 @@ const getAllPlantas = () => {
   return dbService.querypromise(sql);
 };
 
+const getLogin = async (email, password) => {
+  sql = ` SELECT idUser, email, password, nombre, planta, tipoUsuario 
+            FROM user 
+          WHERE email = '${email}' and password = '${password}'`;
+
+  //console.log(dbService.querypromise(sql));
+  return await dbService.querypromise(sql);
+};
+
 module.exports = {
   getAllUsers,
   getUser,
@@ -57,4 +66,5 @@ module.exports = {
   updateUser,
   deleteUser,
   getAllPlantas,
+  getLogin,
 };
