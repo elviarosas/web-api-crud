@@ -17,7 +17,10 @@ app.use(cors());
 
 //La ruta principal del webserver
 app.get("/", (req, res) => {
+  
   res.send("Página de inicio WebApi");
+
+  
 });
 
 //Todas las rutas
