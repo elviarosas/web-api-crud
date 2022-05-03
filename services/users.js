@@ -7,7 +7,7 @@ const getAllUsers = () => {
 };
 
 const getUser = (id) => {
-  sql = ` xSELECT idUser, email, password, nombre, planta, tipoUsuario 
+  sql = ` SELECT idUser, email, password, nombre, planta, tipoUsuario 
             FROM user 
             WHERE idUser = ${id}`;
 

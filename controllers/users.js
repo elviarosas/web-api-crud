@@ -9,7 +9,7 @@ module.exports = {
 
       const user = await UsersService.getLogin(email, password);
       //res.status(200).json({ users });
-      console.log(user);
+      //console.log(user);
 
       if (user[0]) {
         const token = jwt.sign({ email: user.email }, "SECRET");
@@ -45,8 +45,6 @@ module.exports = {
   },
   getAllUsers: async (req, res, next) => {
     try {
-
-      
       const users = await UsersService.getAllUsers();
       console.log(users);
       res.status(200).json({ users });
@@ -58,11 +56,10 @@ module.exports = {
   },
   getUser: async (req, res, next) => {
     try {
-
-      params  =  {
-        id : req.param.id,
-        nom : req.paran.nom
-      }
+      params = {
+        id: req.param.id,
+        nom: req.paran.nom,
+      };
 
       const users = await UsersService.getUser(req.params.id);
       res.status(200).json({ users });
