@@ -1,11 +1,12 @@
 const dbService = require("../config/db.js");
 
-const addEntregas = (body) => {
-  const { file } = body;
-  url = file.location;
+const addEntregas = (path) => {
+  //console.log(body);
 
-  sql = `INSERT INTO entrega(path)
-            VALUES( '${url}'`;
+  // console.log(file);
+
+  console.log(path);
+  sql = `INSERT INTO entrega(fecha, url) VALUES( now(), '${path}')`;
 
   return dbService.querypromise(sql);
 };

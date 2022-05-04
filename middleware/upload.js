@@ -5,7 +5,6 @@ const multer = require("multer");
 const storageConfig = multer.diskStorage({
   destination: (req, file, callback) => {
     let fullPath = path.join(appRoot + `/Documentos/`);
-    console.log(fullPath);
     callback(null, fullPath);
   },
   filename: (req, file, callback) => {

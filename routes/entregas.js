@@ -6,7 +6,7 @@ const { uploadMiddleware } = require("../middleware/upload.js");
 
 router.post(
   "/add",
-  uploadMiddleware.single("file"),
+  uploadMiddleware.single("archivo"),
   EntregasControllers.addEntregas
 );
 
